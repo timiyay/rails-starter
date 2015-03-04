@@ -79,4 +79,5 @@ after_bundle do
   git :init
   git add: '.'
   git commit: "-a -m 'Initial commit'"
+  git checkout: '-b develop'
 end
