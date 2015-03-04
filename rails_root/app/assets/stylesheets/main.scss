@@ -1,15 +1,15 @@
 @import "bourbon";
 @import "scut";
 
-@import "mixins/background";
+// Import your functions and mixins here
 
-@import "base/colors";
-@import "base/dimensions";
-@import "base/typography";
+@import "core/colors";
+@import "core/dimensions";
+@import "core/typography";
 
-@import "base/reset";
-@import "base/elements";
-@import "base/grid";
+@import "core/reset";
+@import "core/elements";
+@import "core/grid";
 
 // Import your components here. Source order matters, but it's ideal to
 // write your styles so that it doesn't actually matter

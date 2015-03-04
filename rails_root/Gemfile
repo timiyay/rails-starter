@@ -7,19 +7,25 @@ ruby '2.2.1'
 gem 'rails', '~> 4.2.0'
 
 gem 'bcrypt' # enable bcrypt hashing for passwords
-gem 'slim'
+gem 'slim-rails'
 
 # ------
 # ASSETS
 # ------
+# Note that we're avoiding use of Compass, due to chronic, ongoing bugs
+# https://github.com/Compass/compass-rails/issues/218
+# https://github.com/Compass/compass-rails/issues/219
+# https://github.com/rails/sprockets-rails/issues/210
 gem 'bourbon'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'compass-rails'
 gem 'jquery-rails'
-gem 'normalize-scss'
-gem 'sass-rails', '~> 5.0'
-gem 'scut'
-gem 'uglifier', '>= 1.3.0' # minify javascript
+gem 'normalize-rails'
+gem 'sass-rails'
+
+# Pinning sprockets to avoid ActionView::Template::Error
+# https://github.com/sstephenson/sprockets/issues/540
+gem 'sprockets', '2.11.0'
+gem 'sprockets-rails', '~> 2.0.0'
 
 # ----------------
 # DB and WEB STACK
@@ -73,7 +79,7 @@ end
 # -------
 group :test do
   gem 'capybara'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'selenium-webdriver'

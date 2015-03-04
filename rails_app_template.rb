@@ -26,6 +26,8 @@ environment 'config.lograge.enabled = true', env: 'production'
 # config/environments/test.rb
 environment 'Rails.application.routes.default_url_options[:host] = \'http://localhost:3000\'', env: 'test'
 
+copy_file 'rails_root/config/unicorn.rb', 'config/unicorn.rb'
+
 # copy dotfiles and any other development config
 remove_file 'README.rdoc'
 create_file 'README.md'
@@ -33,6 +35,7 @@ copy_file 'rails_root/.editorconfig', '.editorconfig'
 copy_file 'rails_root/.rspec', '.rspec'
 copy_file 'rails_root/.rubocop.yml', '.rubocop.yml'
 copy_file 'rails_root/.ruby-version', '.ruby-version'
+copy_file 'rails_root/Procfile', 'Procfile'
 
 # Create directories for modular SMCSS-inspired stylesheets
 remove_file 'app/assets/stylesheets/application.css'
