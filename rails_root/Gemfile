@@ -1,0 +1,80 @@
+source 'https://rubygems.org'
+ruby '2.2.1'
+
+# -----------------------
+# APP FRAMEWORK & PLUGINS
+# -----------------------
+gem 'rails', '~> 4.2.0'
+
+gem 'bcrypt' # enable bcrypt hashing for passwords
+gem 'slim'
+
+# ------
+# ASSETS
+# ------
+gem 'bourbon'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'compass-rails'
+gem 'jquery-rails'
+gem 'normalize-scss'
+gem 'sass-rails', '~> 5.0'
+gem 'scut'
+gem 'uglifier', '>= 1.3.0' # minify javascript
+
+# ----------------
+# DB and WEB STACK
+# ----------------
+gem 'pg'
+gem 'rails_12factor', group: [:production]
+gem 'unicorn' # use unicorn as web app server
+
+# ------------------
+# 3RD-PARTY SERVICES
+# ------------------
+
+# -----------------------------
+# DEVELOPMENT AND TESTING TOOLS
+# -----------------------------
+group :development do
+  gem 'awesome_print'
+  gem 'capistrano'
+  gem 'foreman'
+  gem 'launchy'
+  gem 'letter_opener'
+  gem 'lol_dba'
+  gem 'mail_safe'
+  gem 'pry-rails'
+  gem 'rails_best_practices'
+end
+
+group :development, :test do
+  gem 'byebug'
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'growl'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-cucumber'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-migrate'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'rspec-mocks'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'spring'
+  gem 'sprockets_better_errors'
+  gem 'web-console', '~> 2.0'
+end
+
+# -------
+# TESTING
+# -------
+group :test do
+  gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'email_spec'
+  gem 'vcr'
+  gem 'webmock'
+end
